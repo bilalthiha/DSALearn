@@ -128,4 +128,20 @@ public class LinkedList {
 	        return temp;
 	    }
 	}
+
+	public Node get(int index) {
+        if (index < 0 || index >= length) return null;
+        Node temp = head;
+        for(int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        return temp;
+    }
+
+	public boolean set(int index, int value){
+	    Node node = get(index);
+	    if (node == null) return false;
+	    node.value = value;
+	    return true;
+	}
 }
